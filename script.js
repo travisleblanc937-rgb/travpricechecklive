@@ -6,6 +6,29 @@ let cards = [
   { name: "Card D", price: 30 },
   { name: "Card E", price: 20 }
 ];
+const priceChart = new Chart(ctx, {
+  type: "bar",
+  data: {
+    labels: cards.map(c => c.name),
+    datasets: [{
+      label: "Price",
+      data: cards.map(c => c.price),
+      backgroundColor: cards.map(c => c.price >= 0 ? "rgba(0, 200, 0, 0.5)" : "rgba(255,0,0,0.5)")
+    }]
+  },
+  options: {
+    responsive: true,
+    plugins: {
+      tooltip: {
+        callbacks: {
+          label: function(context) {
+            return `$${context.raw.toFixed(2)}`;
+          }
+        }
+      }
+    }
+  }
+});
 
 const cardList = document.getElementById("cardList");
 const alertsDiv = document.getElementById("alerts");
@@ -77,3 +100,4 @@ let autoSim = setInterval(simulatePriceChange, 15000);
 
 // Initial render
 renderList();
+
