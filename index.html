@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <title>Card Price Tracker - Demo</title>
+  <link rel="icon" href="favicon.png" type="image/png">
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="app">
+    <header>
+      <h1>Card Price Tracker — Demo</h1>
+      <div class="controls">
+        <select id="sortSelect">
+          <option value="desc">Highest → Lowest</option>
+          <option value="asc">Lowest → Highest</option>
+        </select>
+        <button id="simulateBtn">Simulate Price Change</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="chart-section">
+        <canvas id="priceChart"></canvas>
+      </section>
+
+      <section class="list-section">
+        <h2>Cards</h2>
+        <ul id="cardList"></ul>
+      </section>
+
+      <section class="alerts-section">
+        <h2>Alerts</h2>
+        <div id="alerts"></div>
+      </section>
+    </main>
+
+    <footer>
+      <small>Demo dataset. Open on your laptop or host online.</small>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
